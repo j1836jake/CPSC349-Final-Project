@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQL Database for University</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="topnav">
+        <a href="/html/home.html">Home</a>
+        <a href="/html/projects.html">Projects</a>
+        <a href="/html/about.html">About</a>
+        <a href="/html/contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-details">
+        <h1>SQL Database for University</h1>
+        <p>
+          This project involves designing and implementing a relational SQL
+          database to manage various aspects of a university's operations,
+          including students, courses, and faculty.
+        </p>
+
+        <h2>Technologies Used</h2>
+        <ul>
+          <li>SQL (MySQL)</li>
+          <li>Database Design Tools (e.g., ERD tools like Lucidchart)</li>
+          <li>Python (for testing and querying)</li>
+        </ul>
+
+        <h2>Challenges Faced</h2>
+        <p>
+          - Designing a normalized database schema to avoid redundancy.<br />
+          - Writing complex SQL queries to handle multiple table joins.<br />
+          - Ensuring data integrity and implementing proper constraints.<br />
+        </p>
+
+        <h2>Outcomes</h2>
+        <p>
+          - Successfully created a scalable and efficient database schema.<br />
+          - Demonstrated the ability to perform CRUD operations.<br />
+          - Implemented advanced queries to extract meaningful insights (e.g.,
+          student performance reports, course popularity).<br />
+        </p>
+
+        <h2>Schema Overview</h2>
+        <img
+          src="/ProjectFiles/assets/university-schema.png"
+          alt="University Database Schema"
+          class="screenshot"
+        />
+
+        <h2>Key Features</h2>
+        <ul>
+          <li>
+            Student Management: Tracks student information, including personal
+            details and enrolled courses.
+          </li>
+          <li>
+            Course Management: Handles course details, schedules, and instructor
+            assignments.
+          </li>
+          <li>
+            Grading System: Stores grades and generates performance reports.
+          </li>
+        </ul>
+
+        <h2>Sample Queries</h2>
+        <pre>
+<code>-- Retrieve all students enrolled in a specific course:
+SELECT students.name, courses.course_name
+FROM students
+JOIN enrollments ON students.student_id = enrollments.student_id
+JOIN courses ON enrollments.course_id = courses.course_id
+WHERE courses.course_name = 'Database Systems';
+
+-- Calculate average grade for a course:
+SELECT courses.course_name, AVG(grades.grade) AS average_grade
+FROM grades
+JOIN courses ON grades.course_id = courses.course_id
+GROUP BY courses.course_name;</code>
+        </pre>
+
+        <h2>Links</h2>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/jakemendez/university-sql-db"
+              target="_blank"
+              >GitHub Repository</a
+            >
+          </li>
+          <li>
+            <a
+              href="/ProjectFiles/files/university-schema.pdf"
+              download="university-database-schema.pdf"
+              >Download Schema PDF</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Jake Mendez. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
